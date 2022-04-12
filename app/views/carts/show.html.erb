@@ -4,8 +4,8 @@
     <h1>My Cart</h1>
   </header>
 
-  <div class="panel panel-default items">
-    <% if enhanced_cart.length > 0 then %>
+  <% if enhanced_cart.length > 0 then %>
+    <div class="panel panel-default items">
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -50,11 +50,13 @@
       </div>
     </div>
 
-    <% else %>
-      <h2>Your cart is empty</h2>
-      <%= link_to root_path, class: 'btn btn-default pull-left' do %>
-        Continue Shopping &raquo;
+      <% else %>
+        <div class="alert alert-info" role="alert">
+          <h3>Your cart is currently empty</h3>
+        </div>
+        <%= link_to root_path, class: 'btn btn-primary pull-left' do %>
+          Continue Shopping &raquo;
+      <% end %>
     <% end %>
-  <% end %>
 
 </section>
