@@ -2,11 +2,34 @@
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  First Name: <%= f.text_field :first_name %>
-  Last Name: <%= f.text_field :last_name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <div class="card">
+    <div class="card-body">
+
+      <div class="mb-3">
+        <%= f.label :first_name, { class: "form-label"} %>
+        <%= f.text_field :first_name, { class: "form-control", placeholder: "First Name" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :last_name, { class: "form-label"} %>
+        <%= f.text_field :last_name, { class: "form-control", placeholder: "Last Name" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :email, { class: "form-label"} %>
+        <%= f.text_field :email, { class: "form-control", placeholder: "Email", type: "email" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :password, { class: "form-label"} %>
+        <%= f.text_field :password, { class: "form-control", placeholder: "Enter you password", type: "password" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :password_confirmation, { class: "form-label"} %>
+        <%= f.text_field :password_confirmation, { class: "form-control", placeholder: "Enter your password again", type: "password" } %>
+      </div>
+
+    </div>
+  </div>
+<%= f.submit "Sign In" %>
 
 <% end %>
+
+<a href="/login" class="alert-info">Already have an account? Login here!</a>
