@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-light navbar-fixed-top navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -48,9 +48,10 @@
           <% end %>
         </li>
           <% if current_user %>
-            <li>Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %></li>
+            <li>Hello, <%= current_user.first_name %>! | </li> 
+            <li><%= link_to "Logout", '/logout' %></li>
           <% else %>
-            <li><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></li>
+            <li><%= link_to 'Login', '/login' %></li>
           <% end %>
       </ul>
     </div>
